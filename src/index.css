@@ -4,6 +4,11 @@
 
 html {
 	scroll-behavior: smooth;
+	overflow: hidden;
+}
+
+body {
+	scrollbar-gutter: stable both-edges;
 }
 
 @keyframes fadeIn {
@@ -27,4 +32,8 @@ html {
 .scrollbar-hide {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+}
+
+.swiper {
+	overflow-x: clip; /* better than hidden, no scrollbar flash */
 }

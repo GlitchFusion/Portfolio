@@ -1,38 +1,114 @@
 import skills from "../data/skills";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Skills = () => {
+	const handleMouseMove = (e, card) => {
+		const rect = card.getBoundingClientRect();
+		const x = e.clientX - rect.left - rect.width / 2;
+		const y = e.clientY - rect.top - rect.height / 2;
+
+		card.style.transform = `
+			translate(${x * -0.05}px, ${y * -0.05}px)
+		`;
+	};
+
+	const handleMouseLeave = (card) => {
+		card.style.transform = "translate(0px, 0px)";
+	};
+
 	return (
-		<section className="py-10 px-6 bg-bg-dark text-text-dark">
-			<div className="max-w-7xl mx-auto space-y-16">
-				{/* Skills */}
-				<div>
-					<h2 className="text-2xl font-semibold mb-8">Skills</h2>
-					<div className="flex flex-wrap gap-4">
-						{skills.map((skill) => (
+		<section className="py-14 px-6 bg-bg-dark text-text-dark overflow-hidden">
+			<div className="max-w-7xl mx-auto space-y-12 relative">
+				<h2 className="text-2xl font-semibold">Skills</h2>
+
+				{/* Navigation Buttons */}
+				<button
+					className="
+            skills-prev
+            absolute -left-4 top-1/2 -translate-y-1/2
+            z-10
+            p-2
+            bg-bg-surface
+            border border-border
+            rounded-full
+            hover:border-accent
+            transition
+          "
+					aria-label="Previous skills"
+				>
+					<ChevronLeft size={20} />
+				</button>
+
+				<button
+					className="
+            skills-next
+            absolute -right-4 top-1/2 -translate-y-1/2
+            z-10
+            p-2
+            bg-bg-surface
+            border border-border
+            rounded-full
+            hover:border-accent
+            transition
+          "
+					aria-label="Next skills"
+				>
+					<ChevronRight size={20} />
+				</button>
+
+				<Swiper
+					modules={[Autoplay, Navigation]}
+					navigation={{
+						prevEl: ".skills-prev",
+						nextEl: ".skills-next",
+					}}
+					spaceBetween={24}
+					slidesPerView={2}
+					loop
+					autoplay={{
+						delay: 2200,
+						disableOnInteraction: false,
+					}}
+					breakpoints={{
+						640: { slidesPerView: 3 },
+						768: { slidesPerView: 4 },
+						1024: { slidesPerView: 5 },
+					}}
+					className="!overflow-visible py-6 will-change-transform"
+				>
+					{skills.map((skill) => (
+						<SwiperSlide key={skill.name} className="!overflow-visible">
 							<div
-								key={skill.name}
+								onMouseMove={(e) => handleMouseMove(e, e.currentTarget)}
+								onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
 								className="
-                  flex items-center gap-3
-                  px-4 py-2
+                  h-32
+                  flex flex-col items-center justify-center gap-3
                   bg-bg-surface
                   border border-border
-                  rounded-md
-                  text-sm
-                  hover:border-accent
-                  transition
+                  rounded-xl
+                  shadow-sm
+                  transition-transform duration-200 ease-out
+                  will-change-transform
                 "
 							>
 								<img
 									src={skill.icon}
 									alt={skill.name}
-									className="w-5 h-5"
+									className="w-10 h-10 pointer-events-none"
 									loading="lazy"
 								/>
-								<span>{skill.name}</span>
+								<span className="text-sm font-medium pointer-events-none">
+									{skill.name}
+								</span>
 							</div>
-						))}
-					</div>
-				</div>
+						</SwiperSlide>
+					))}
+				</Swiper>
 			</div>
 		</section>
 	);
