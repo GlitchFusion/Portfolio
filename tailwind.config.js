@@ -5,6 +5,9 @@ export default {
 		extend: {
 			fontFamily: {
 				brand: ["Averia Libre", "serif"],
+				title: ["Frijole", "serif"],
+				hero: ["cursive"],
+				about: ["Coming Soon"],
 			},
 			colors: {
 				bg: {

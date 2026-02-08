@@ -12,9 +12,9 @@ function App() {
 			<MainLayout>
 				<Hero />
 				<About />
+				<Tools />
 				<Skills />
 				<Projects />
-				<Tools />
 				<Contact />
 			</MainLayout>
 		</>

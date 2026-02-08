@@ -1,4 +1,132 @@
-const Hero = () => {
-	return <div>Hero</div>;
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Socials from "../components/Socials";
+import pfp from "../assets/images/pfp.jpg";
+
+const bgVariants = {
+	default: {
+		background: "radial-gradient(circle at top, #000000, #000000)",
+	},
+	coffee: {
+		background: "radial-gradient(circle at top, #1a120c, #050508)",
+	},
+	music: {
+		background: "radial-gradient(circle at center, #0b1a1f, #050508)",
+	},
+	ai: {
+		background: "radial-gradient(circle at center, #120b1f, #050508)",
+	},
 };
+const Hero = () => {
+	const [bg, setBg] = useState("default");
+
+	return (
+		<motion.section
+			id="hero"
+			animate={bg}
+			variants={bgVariants}
+			transition={{ duration: 0.6, ease: "easeInOut" }}
+			className="relative min-h-screen text-text-dark"
+		>
+			{/* Centered Container */}
+			<div
+				className="
+          absolute
+          top-1/2 left-1/2
+          -translate-x-1/2 -translate-y-1/2
+          w-full px-6
+        "
+			>
+				<div
+					className="
+            max-w-4xl mx-auto
+            grid grid-cols-1 md:grid-cols-2
+            gap-8
+            items-center
+          "
+				>
+					{/* LEFT — TEXT */}
+					<motion.div
+						initial={{ opacity: 0, y: 12 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, ease: "easeOut" }}
+						className="space-y-5"
+					>
+						<h1 className="font-title text-[2.6rem] sm:text-[3.2rem] leading-tight tracking-wide">
+							Glitch<span className="text-accent">Fusion</span>
+						</h1>
+
+						<p className="font-hero text-text-muted text-sm sm:text-base tracking-wide">
+							<span
+								onMouseEnter={() => setBg("coffee")}
+								onMouseLeave={() => setBg("default")}
+								className="hover:cursor-pointer hover:text-accent transition-colors"
+							>
+								Coffee-fueled Developer
+							</span>
+							<span className="mx-3">·</span>
+							Quiet by nature
+						</p>
+
+						<p className="max-w-md text-text-muted text-sm sm:text-base leading-relaxed">
+							Frontend developer and AI/ML enthusiast exploring intelligent,
+							secure systems at the intersection of web and{" "}
+							<span
+								onMouseEnter={() => setBg("ai")}
+								onMouseLeave={() => setBg("default")}
+								className="hover:cursor-pointer hover:text-accent transition-colors"
+							>
+								AI
+							</span>
+							, Loves{" "}
+							<span
+								onMouseEnter={() => setBg("music")}
+								onMouseLeave={() => setBg("default")}
+								className="hover:cursor-pointer hover:text-accent transition-colors"
+							>
+								music
+							</span>
+							, focus, and curiosity.
+						</p>
+
+						{/* Social Icons */}
+						<div className="flex items-center gap-5 pt-2">
+							<Socials
+								size={20}
+								className="pt-2"
+								iconClass="text-text-muted hover:text-accent"
+							/>
+						</div>
+					</motion.div>
+
+					{/* RIGHT — IMAGE */}
+					<motion.div
+						initial={{ opacity: 0, scale: 0.96 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+						className="flex justify-center"
+					>
+						<div
+							className="
+                w-52 h-52 sm:w-60 sm:h-60
+                rounded-2xl
+                overflow-hidden
+                border border-border
+                bg-bg-surface
+                shadow-[0_0_40px_rgba(0,0,0,0.6)]
+              "
+						>
+							<img
+								src={pfp}
+								alt="Coder aesthetic"
+								className="w-full h-full object-cover"
+							/>
+						</div>
+					</motion.div>
+				</div>
+			</div>
+		</motion.section>
+	);
+};
+
 export default Hero;
