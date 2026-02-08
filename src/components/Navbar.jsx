@@ -28,8 +28,8 @@ const Navbar = () => {
 			}}
 			className="
         fixed top-0 left-0 w-full z-50
-        bg-bg-surface/90 backdrop-blur-md
-        px-8 py-4
+        bg-bg-dark/50 backdrop-blur-md
+        px-10 py-4
         flex items-center justify-between
       "
 		>
