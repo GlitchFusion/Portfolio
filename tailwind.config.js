@@ -3,27 +3,20 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,jsx}"],
 	theme: {
 		extend: {
+			fontFamily: {
+				brand: ["Averia Libre", "serif"],
+			},
 			colors: {
 				bg: {
-					light: "#F8FAFC",
-					dark: "#020617",
-					surface: "#0F172A",
-					hover: "#111827",
+					dark: "#000000",
+					surface: "#0A0A0A",
 				},
 				text: {
-					light: "#020617",
-					dark: "#E5E7EB",
-					secondary: "#94A3B8",
-					muted: "#64748B",
+					dark: "#EDEDED",
+					muted: "#9CA3AF",
 				},
-				accent: {
-					DEFAULT: "#3B82F6",
-					hover: "#60A5FA",
-				},
-				border: {
-					light: "#E2E8F0",
-					dark: "#1E293B",
-				},
+				accent: "#3B82F6",
+				border: "#1F2937",
 			},
 		},
 	},
