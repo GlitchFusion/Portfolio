@@ -6,7 +6,7 @@ const MainLayout = ({ children }) => {
 		<div className="max-h-screen flex flex-col bg-bg-dark text-text-dark">
 			<Navbar />
 
-			<main className="flex-grow pt-20">{children}</main>
+			<main className="flex-grow">{children}</main>
 
 			<Footer />
 		</div>

@@ -5,6 +5,7 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Tools from "./sections/Tools";
 import Contact from "./sections/Contact";
+import Capablities from "./sections/Capablities";
 
 function App() {
 	return (
@@ -12,9 +13,7 @@ function App() {
 			<MainLayout>
 				<Hero />
 				<About />
-				<Tools />
-				<Skills />
-				<Projects />
+				<Capablities />
 				<Contact />
 			</MainLayout>
 		</>
