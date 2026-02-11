@@ -4,11 +4,35 @@
 
 html {
 	scroll-behavior: smooth;
-	overflow: hidden;
 }
 
 body {
 	scrollbar-gutter: stable both-edges;
+	overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: #1f2937 #0a0a0a;
+}
+
+/* Webkit Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #1f2937;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #3b82f6;
 }
 
 @keyframes fadeIn {
@@ -29,6 +53,7 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
 	display: none;
 }
+
 .scrollbar-hide {
 	-ms-overflow-style: none;
 	scrollbar-width: none;

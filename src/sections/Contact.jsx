@@ -51,7 +51,7 @@ const Contact = () => {
 
 			<section
 				id="contact"
-				className="w-full py-24 px-6 bg-bg-dark text-text-dark"
+				className="w-full py-12 px-6 bg-bg-dark text-text-dark"
 			>
 				<div className="max-w-3xl mx-auto">
 					{/* Header */}

@@ -2,7 +2,7 @@ import Socials from "./Socials";
 
 const Footer = () => {
 	return (
-		<footer className="mt-14 border-t border-border bg-bg-surface/50">
+		<footer className="border-t border-border bg-bg-surface">
 			<div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-6">
 				{/* Social Links */}
 				<div className="flex flex-col sm:flex-row gap-4 text-sm text-text-muted">
