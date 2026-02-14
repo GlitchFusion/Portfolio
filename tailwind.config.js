@@ -8,6 +8,7 @@ export default {
 				title: ["Frijole", "serif"],
 				hero: ["cursive"],
 				about: ["Coming Soon"],
+				quotes: ["Josefin Sans", "monospace"],
 			},
 			colors: {
 				bg: {

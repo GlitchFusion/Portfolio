@@ -89,6 +89,30 @@ const Hero = () => {
 							, focus, and curiosity.
 						</p>
 
+						<div className="pt-2">
+  						<p
+    						className="
+      						inline-flex items-center
+      						px-5 py-2.5
+      						rounded-full
+      						border border-border
+      						bg-bg-surface/60
+      						backdrop-blur-md
+      						text-sm
+      						font-quotes
+      						text-text-muted
+      						tracking-wide
+      						transition-all duration-300
+      						hover:border-accent/40
+      						hover:shadow-[0_0_20px_rgba(139,92,246,0.15)]
+    						"
+  						>
+    <span className="mr-2 text-accent">✦</span>
+    Write code. Stay curious. Improve daily.
+  </p>
+</div>
+
+
 						{/* Social Icons */}
 						<div className="flex items-center gap-5 pt-2">
 							<Socials
