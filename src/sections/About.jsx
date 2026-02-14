@@ -27,14 +27,14 @@ const About = ({ dev }) => {
 			className="relative min-h-screen flex items-center justify-center px-6 text-text-dark"
 		>
 			<DevWrapper name="About.Section" dev={dev}>
-				<div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-center gap-12 py-8 px-8">
+				<div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-center gap-12">
 					{/* IMAGE */}
 					<DevWrapper name="About.Image" dev={dev}>
 						<motion.div
 							initial={{ opacity: 0, x: -20 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.8 }}
-							className="flex justify-center py-4 px-4"
+							className="flex justify-center"
 						>
 							<div className="w-64 h-64 rounded-2xl overflow-hidden border border-border bg-bg-surface shadow-[0_0_40px_rgba(0,0,0,0.6)]">
 								<img
@@ -52,7 +52,7 @@ const About = ({ dev }) => {
 							initial={{ opacity: 0, x: 20 }}
 							whileInView={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.8 }}
-							className="w-full md:w-[520px] bg-bg-surface/40 backdrop-blur-md border border-border rounded-2xl p-8 space-y-6 mx-4 my-4"
+							className="w-full md:w-[520px] bg-bg-surface/40 backdrop-blur-md border border-border rounded-2xl p-8 space-y-6"
 						>
 							<h2 className="font-brand text-4xl tracking-wide">
 								About <span className="text-accent">Me</span>

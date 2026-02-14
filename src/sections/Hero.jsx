@@ -17,7 +17,7 @@ const Hero = ({ devmode, dev }) => {
 						initial={{ opacity: 0, y: 12 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, ease: "easeOut" }}
-						className="space-y-6 flex flex-col items-center px-8 py-8"
+						className="space-y-6 flex flex-col items-center"
 					>
 						<h1 className="font-title text-[2.8rem] sm:text-[3.4rem] leading-tight tracking-wide">
 							Glitch<span className="text-accent">Fusion</span>
@@ -52,7 +52,7 @@ const Hero = ({ devmode, dev }) => {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-						className="flex justify-center gap-6 py-4 px-2"
+						className="flex justify-center gap-6"
 					>
 						<a href="#projects">
 							<button className="px-8 py-3 rounded-xl bg-gradient-to-r from-accent to-blue-500 text-white font-medium tracking-wide hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
