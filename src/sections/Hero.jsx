@@ -130,13 +130,13 @@ const Hero = ({ devmode, dev }) => {
 					>
 						<div
 							className="
-                			w-52 h-52 sm:w-60 sm:h-60
-                			rounded-2xl
-                			overflow-hidden
-                			border border-border
-                			bg-bg-surface
-                			shadow-[0_0_40px_rgba(0,0,0,0.6)]
-              				"
+								w-52 h-52 sm:w-60 sm:h-60
+								rounded-2xl
+								overflow-hidden
+								border border-border
+								bg-bg-surface
+								shadow-[0_0_40px_rgba(0,0,0,0.6)]
+							"
 						>
 							<img
 								src={pfp}

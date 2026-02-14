@@ -15,17 +15,17 @@ function App() {
 	return (
 		<>
 			<MainLayout dev={devMode}>
-				{devMode && <DashedLine label="Hero Section" />}
+				{devMode && <DashedLine label="Hero" />}
 				<Hero devmode={setDevMode} dev={devMode} />
-				{devMode && <DashedLine label="Hero Section" />}
+				{devMode && <DashedLine label="About" />}
 				<About />
-				{devMode && <DashedLine label="Hero Section" />}
+				{devMode && <DashedLine label="Skills" />}
 				<Skills />
-				{devMode && <DashedLine label="Hero Section" />}
+				{devMode && <DashedLine label="Tools" />}
 				<Tools />
-				{devMode && <DashedLine label="Hero Section" />}
+				{devMode && <DashedLine label="Projects" />}
 				<Projects />
-				{devMode && <DashedLine label="Hero Section" />}
+				{devMode && <DashedLine label="Contact" />}
 				<Contact />
 			</MainLayout>
 		</>
