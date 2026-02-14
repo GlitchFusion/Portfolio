@@ -17,7 +17,7 @@ const bgVariants = {
 		background: "radial-gradient(circle at center, #120b1f, #050508)",
 	},
 };
-const Hero = () => {
+const Hero = ({ devmode, dev }) => {
 	const [bg, setBg] = useState("default");
 
 	return (
@@ -31,19 +31,19 @@ const Hero = () => {
 			{/* Centered Container */}
 			<div
 				className="
-          absolute
-          top-1/2 left-1/2
-          -translate-x-1/2 -translate-y-1/2
-          w-full px-6
-        "
+				absolute
+				top-1/2 left-1/2
+				-translate-x-1/2 -translate-y-1/2
+				w-full px-6
+				"
 			>
 				<div
 					className="
-            max-w-4xl mx-auto
-            grid grid-cols-1 md:grid-cols-2
-            gap-8
-            items-center
-          "
+						max-w-4xl mx-auto
+						grid grid-cols-1 md:grid-cols-2
+						gap-8
+						items-center
+					"
 				>
 					{/* LEFT — TEXT */}
 					<motion.div
@@ -90,8 +90,8 @@ const Hero = () => {
 						</p>
 
 						<div className="pt-2">
-  						<p
-    						className="
+							<p
+								className="
       						inline-flex items-center
       						px-5 py-2.5
       						rounded-full
@@ -106,12 +106,10 @@ const Hero = () => {
       						hover:border-accent/40
       						hover:shadow-[0_0_20px_rgba(139,92,246,0.15)]
     						"
-  						>
-    <span className="mr-2 text-accent">✦</span>
-    Write code. Stay curious. Improve daily.
-  </p>
-</div>
-
+							>
+								Write code. Stay curious. Improve daily.
+							</p>
+						</div>
 
 						{/* Social Icons */}
 						<div className="flex items-center gap-5 pt-2">
@@ -132,13 +130,13 @@ const Hero = () => {
 					>
 						<div
 							className="
-                w-52 h-52 sm:w-60 sm:h-60
-                rounded-2xl
-                overflow-hidden
-                border border-border
-                bg-bg-surface
-                shadow-[0_0_40px_rgba(0,0,0,0.6)]
-              "
+                			w-52 h-52 sm:w-60 sm:h-60
+                			rounded-2xl
+                			overflow-hidden
+                			border border-border
+                			bg-bg-surface
+                			shadow-[0_0_40px_rgba(0,0,0,0.6)]
+              				"
 						>
 							<img
 								src={pfp}
@@ -146,6 +144,52 @@ const Hero = () => {
 								className="w-full h-full object-cover"
 							/>
 						</div>
+					</motion.div>
+
+					{/* Bottom - Buttons */}
+					<motion.div
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+						className="mt-14 w-full flex justify-center gap-6"
+					>
+						<a href="#projects">
+							<button
+								className="
+								px-8 py-3
+								rounded-xl
+								bg-gradient-to-r from-accent to-blue-500
+
+								text-white
+								font-medium
+								tracking-wide
+								hover:scale-[1.02]
+								active:scale-[0.98]
+								transition-all duration-300
+								"
+							>
+								Explore Work
+							</button>
+						</a>
+
+						<button
+							className="
+							px-8 py-3
+							rounded-xl
+							border border-border
+							bg-transparent
+							text-text-muted
+							font-medium
+							tracking-wide
+							hover:text-text-dark
+							hover:border-accent/60
+							hover:bg-bg-surface/40
+							transition-all duration-300
+							"
+							onClick={() => devmode((prev) => !prev)}
+						>
+							{dev ? "Exit Dev Mode" : "Enter Dev Mode"}
+						</button>
 					</motion.div>
 				</div>
 			</div>
