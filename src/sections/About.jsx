@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import DevWrapper from "../components/DevWrapper";
+import pfp from "../assets/images/pfp.jpg";
 
 const aboutBgVariants = {
 	default: {
@@ -8,12 +10,12 @@ const aboutBgVariants = {
 	ai: {
 		background: "radial-gradient(circle at center, #120b1f, #050508)",
 	},
-	language: {
+	cyber: {
 		background: "radial-gradient(circle at center, #0b1a14, #050508)",
 	},
 };
 
-const About = () => {
+const About = ({ dev }) => {
 	const [bg, setBg] = useState("default");
 
 	return (
@@ -22,78 +24,81 @@ const About = () => {
 			animate={bg}
 			variants={aboutBgVariants}
 			transition={{ duration: 0.6, ease: "easeInOut" }}
-			className="w-full py-24 px-6 text-text-dark"
+			className="relative min-h-screen flex items-center justify-center px-6 text-text-dark"
 		>
-			<div className="max-w-4xl mx-auto">
-				{/* Header */}
-				<h2 className="font-brand text-3xl sm:text-4xl tracking-wide mb-10">
-					About <span className="text-accent">Me</span>
-				</h2>
-
-				{/* Content */}
-				<div className="font-about space-y-6 text-text-muted leading-relaxed text-sm sm:text-base">
-					<p>
-						I’m a B.Tech student and a self-taught web developer with a strong
-						focus on front-end development and a growing interest in full-stack
-						engineering. I enjoy building clean, responsive, and intuitive user
-						interfaces, and I’m currently expanding my skill set by integrating
-						scalable back-end systems with modern front-end applications.
-					</p>
-
-					<p>
-						Beyond web development, I’m deeply interested in emerging
-						technologies—particularly{" "}
-						<span
-							onMouseEnter={() => setBg("ai")}
-							onMouseLeave={() => setBg("default")}
-							className="text-accent hover:cursor-pointer transition-colors"
+			<DevWrapper name="About.Section" dev={dev}>
+				<div className="w-full max-w-5xl flex flex-col md:flex-row items-center justify-center gap-12 py-8 px-8">
+					{/* IMAGE */}
+					<DevWrapper name="About.Image" dev={dev}>
+						<motion.div
+							initial={{ opacity: 0, x: -20 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8 }}
+							className="flex justify-center py-4 px-4"
 						>
-							AI
-						</span>
-						,{" "}
-						<span
-							onMouseEnter={() => setBg("ai")}
-							onMouseLeave={() => setBg("default")}
-							className="text-accent hover:cursor-pointer transition-colors"
-						>
-							ML
-						</span>
-						, and Cybersecurity. I actively explore how AI/ML models and
-						intelligent agents are designed, trained, and deployed, while also
-						learning the principles that keep modern systems secure, performant,
-						and reliable.
-					</p>
+							<div className="w-64 h-64 rounded-2xl overflow-hidden border border-border bg-bg-surface shadow-[0_0_40px_rgba(0,0,0,0.6)]">
+								<img
+									src={pfp}
+									alt="Profile"
+									className="w-full h-full object-cover"
+								/>
+							</div>
+						</motion.div>
+					</DevWrapper>
 
-					<p>
-						I’m also passionate about language learning and am currently
-						studying{" "}
-						<span
-							onMouseEnter={() => setBg("language")}
-							onMouseLeave={() => setBg("default")}
-							className="text-accent hover:cursor-pointer transition-colors"
+					{/* TEXT CARD */}
+					<DevWrapper name="About.Card" dev={dev}>
+						<motion.div
+							initial={{ opacity: 0, x: 20 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8 }}
+							className="w-full md:w-[520px] bg-bg-surface/40 backdrop-blur-md border border-border rounded-2xl p-8 space-y-6 mx-4 my-4"
 						>
-							German
-						</span>{" "}
-						and{" "}
-						<span
-							onMouseEnter={() => setBg("language")}
-							onMouseLeave={() => setBg("default")}
-							className="text-accent hover:cursor-pointer transition-colors"
-						>
-							Chinese
-						</span>
-						, driven by curiosity about global communication, diverse cultures,
-						and the role language plays in technology and innovation.
-					</p>
+							<h2 className="font-brand text-4xl tracking-wide">
+								About <span className="text-accent">Me</span>
+							</h2>
 
-					<p>
-						Driven by curiosity and long-term ambition, my goal is to become a
-						versatile technologist capable of building complete full-stack
-						applications, AI-powered systems, and secure solutions that solve
-						real-world problems.
-					</p>
+							<p className="text-text-muted leading-relaxed text-sm sm:text-base">
+								I’m a B.Tech student and a self-taught web developer focused on
+								building clean, responsive, and intuitive user interfaces.
+							</p>
+
+							<p className="text-text-muted leading-relaxed text-sm sm:text-base">
+								I’m deeply interested in emerging technologies—particularly{" "}
+								<span
+									onMouseEnter={() => setBg("ai")}
+									onMouseLeave={() => setBg("default")}
+									className="text-accent hover:cursor-pointer transition-colors"
+								>
+									AI
+								</span>
+								,{" "}
+								<span
+									onMouseEnter={() => setBg("ai")}
+									onMouseLeave={() => setBg("default")}
+									className="text-accent hover:cursor-pointer transition-colors"
+								>
+									ML
+								</span>
+								, and{" "}
+								<span
+									onMouseEnter={() => setBg("cyber")}
+									onMouseLeave={() => setBg("default")}
+									className="text-accent hover:cursor-pointer transition-colors"
+								>
+									Cybersecurity
+								</span>
+								.
+							</p>
+
+							<p className="text-text-muted leading-relaxed text-sm sm:text-base">
+								My goal is to build secure, intelligent, full-stack systems that
+								solve real-world problems.
+							</p>
+						</motion.div>
+					</DevWrapper>
 				</div>
-			</div>
+			</DevWrapper>
 		</motion.section>
 	);
 };

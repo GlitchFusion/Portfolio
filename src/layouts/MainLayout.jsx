@@ -6,9 +6,9 @@ const MainLayout = ({ children, dev }) => {
 		<div className="relative min-h-screen flex flex-col bg-bg-dark text-text-dark overflow-hidden">
 			{/* CONTENT WRAPPER */}
 			<div className="relative z-10 flex flex-col min-h-screen">
-				<Navbar />
+				<Navbar dev={dev} />
 				<main className="flex-grow">{children}</main>
-				<Footer />
+				<Footer dev={dev} />
 			</div>
 		</div>
 	);

@@ -18,15 +18,15 @@ function App() {
 				{devMode && <DashedLine label="Hero" />}
 				<Hero devmode={setDevMode} dev={devMode} />
 				{devMode && <DashedLine label="About" />}
-				<About />
+				<About dev={devMode} />
 				{devMode && <DashedLine label="Skills" />}
-				<Skills />
+				<Skills dev={devMode} />
 				{devMode && <DashedLine label="Tools" />}
-				<Tools />
+				<Tools dev={devMode} />
 				{devMode && <DashedLine label="Projects" />}
-				<Projects />
+				<Projects dev={devMode} />
 				{devMode && <DashedLine label="Contact" />}
-				<Contact />
+				<Contact dev={devMode} />
 			</MainLayout>
 		</>
 	);
