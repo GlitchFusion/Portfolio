@@ -13,10 +13,10 @@ import {
 const navItems = [
 	{ name: "Home", icon: Home, href: "#hero" },
 	{ name: "About", icon: User, href: "#about" },
-	{ name: "Skills", icon: Code2, href: "#skills" },
-	{ name: "Tools", icon: Wrench, href: "#tools" },
 	{ name: "AI Lab", icon: Cpu, href: "#ai-lab" },
 	{ name: "Languages", icon: Languages, href: "#languages" },
+	{ name: "Skills", icon: Code2, href: "#skills" },
+	{ name: "Tools", icon: Wrench, href: "#tools" },
 	{ name: "Projects", icon: FolderKanban, href: "#projects" },
 ];
 

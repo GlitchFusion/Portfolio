@@ -12,13 +12,13 @@ const Languages = ({ dev }) => {
 	return (
 		<section
 			id="languages"
-			className="relative min-h-screen text-text-dark px-6 py-28"
+			className="relative min-h-screen text-text-dark px-6 py-14"
 		>
 			{/* CONTAINER */}
-			<div className="w-full md:w-[60%] max-w-[1200px] mx-auto space-y-20">
+			<div className="w-full md:w-[60%] max-w-[1200px] mx-auto flex flex-col gap-10">
 				{/* Title */}
 				<DevWrapper name="Languages.Title" dev={dev}>
-					<h1 className="text-4xl sm:text-5xl font-semibold tracking-wide p-4">
+					<h1 className="text-4xl sm:text-5xl font-semibold tracking-wide">
 						Global <span className="text-accent">coordinates</span>.
 					</h1>
 				</DevWrapper>
@@ -44,7 +44,7 @@ const Languages = ({ dev }) => {
 									<div
 										key={key}
 										onClick={() => setActive(active === key ? null : key)}
-										className="cursor-pointer px-10 py-10 group transition-all duration-300"
+										className="cursor-pointer px-8 py-6 group transition-all duration-300"
 									>
 										{/* Top Row */}
 										<div className="flex justify-between items-center">
@@ -65,7 +65,7 @@ const Languages = ({ dev }) => {
 
 										{/* Coordinates */}
 										<div
-											className={`mt-3 text-xs tracking-widest transition-colors duration-300 ${
+											className={`mt-2 text-xs tracking-widest transition-colors duration-300 ${
 												isActive
 													? "text-text-dark"
 													: "text-text-muted/40 group-hover:text-text-muted"
@@ -78,7 +78,7 @@ const Languages = ({ dev }) => {
 										{isActive && (
 											<motion.div
 												layoutId="active-line"
-												className="h-[2px] bg-accent mt-6"
+												className="h-[2px] bg-accent mt-4"
 												transition={{
 													type: "spring",
 													stiffness: 300,
@@ -99,11 +99,11 @@ const Languages = ({ dev }) => {
 						{data ? (
 							<motion.div
 								key={active}
-								initial={{ opacity: 0, y: 30 }}
+								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
-								exit={{ opacity: 0, y: -20 }}
-								transition={{ duration: 0.35 }}
-								className="relative border border-border rounded-xl p-12 bg-bg-surface/30 backdrop-blur-md"
+								exit={{ opacity: 0, y: -10 }}
+								transition={{ duration: 0.3 }}
+								className="relative border border-border rounded-xl p-10 bg-bg-surface/30 backdrop-blur-md"
 							>
 								{/* Grid Overlay */}
 								<div
@@ -113,7 +113,7 @@ const Languages = ({ dev }) => {
 										bg-[size:50px_50px]"
 								/>
 
-								<div className="relative space-y-14">
+								<div className="relative space-y-10">
 									{/* Header */}
 									<div className="flex justify-between items-center">
 										<h2 className="text-2xl tracking-widest">{data.name}</h2>
@@ -123,7 +123,7 @@ const Languages = ({ dev }) => {
 									</div>
 
 									{/* Info Grid */}
-									<div className="grid md:grid-cols-2 gap-16 text-sm leading-relaxed">
+									<div className="grid md:grid-cols-2 gap-12 text-sm leading-relaxed">
 										<InfoBlock title="PROFICIENCY" value={data.proficiency} />
 										<InfoBlock title="RESEARCH FOCUS" value={data.research} />
 										<InfoBlock title="STRATEGIC VALUE" value={data.strategic} />
@@ -140,7 +140,7 @@ const Languages = ({ dev }) => {
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
-								className="relative border border-border rounded-xl py-24 bg-bg-surface/20 backdrop-blur-md flex items-center justify-center"
+								className="relative border border-border rounded-xl py-20 bg-bg-surface/20 backdrop-blur-md flex items-center justify-center"
 							>
 								{/* Grid Overlay */}
 								<div

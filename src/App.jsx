@@ -9,6 +9,7 @@ import Languages from "./sections/Languages";
 import { useState } from "react";
 
 import DashedLine from "./components/DashedLine";
+import AILab from "./sections/AILab";
 
 function App() {
 	const [devMode, setDevMode] = useState(false);
@@ -16,11 +17,12 @@ function App() {
 	const pages = [
 		{ id: "hero", component: <Hero devmode={setDevMode} dev={devMode} /> },
 		{ id: "about", component: <About dev={devMode} /> },
+		{ id: "ai-lab", component: <AILab dev={devMode} /> },
+		{ id: "languages", component: <Languages dev={devMode} /> },
 		{ id: "skills", component: <Skills dev={devMode} /> },
 		{ id: "tools", component: <Tools dev={devMode} /> },
 		{ id: "projects", component: <Projects dev={devMode} /> },
 		{ id: "contact", component: <Contact dev={devMode} /> },
-		{ id: "languages", component: <Languages dev={devMode} /> },
 	];
 
 	return (
@@ -28,7 +30,12 @@ function App() {
 			<MainLayout dev={devMode}>
 				{pages.map((page, index) => (
 					<>
-						{devMode && <DashedLine key={`line-${index}`} label={page.id} />}
+						{devMode && (
+							<DashedLine
+								key={`line-${index}`}
+								label={page.id.charAt(0).toUpperCase().concat(page.id.slice(1))}
+							/>
+						)}
 						<div key={index}>{page.component}</div>
 					</>
 				))}
