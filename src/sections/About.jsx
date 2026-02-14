@@ -93,11 +93,6 @@ const About = () => {
 						real-world problems.
 					</p>
 				</div>
-
-				{/* Quote */}
-				<p className="mt-10 text-sm text-text-muted italic">
-					“Write code. Stay curious. Improve daily.”
-				</p>
 			</div>
 		</motion.section>
 	);
