@@ -3,7 +3,6 @@ const DevWrapper = ({ name, dev, children }) => {
 
 	return (
 		<div className="relative group">
-			{/* Dashed Border */}
 			<div className="absolute inset-0 border border-dashed border-accent/50 rounded-lg pointer-events-none"></div>
 
 			{/* Label */}
