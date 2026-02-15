@@ -3,8 +3,8 @@ import DevWrapper from "./DevWrapper";
 
 const Footer = ({ dev }) => {
 	return (
-		<footer className="border-t border-border bg-bg-surface">
-			<div className="max-w-7xl mx-auto flex flex-col gap-8">
+		<footer className="border-t border-border bg-bg-surface mt-4">
+			<div className="max-w-full mx-auto flex flex-col gap-8 p-3">
 				{/* Social Links */}
 				<DevWrapper name="Footer.Socials" dev={dev}>
 					<div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-sm text-text-muted ">
