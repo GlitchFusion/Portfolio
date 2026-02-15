@@ -23,22 +23,34 @@ const AILab = () => {
 	return (
 		<section
 			id="ai-lab"
-			className="relative min-h-screen bg-bg-dark text-text-dark px-6 py-6 overflow-hidden"
+			className="
+				relative
+				min-h-screen
+				flex
+				items-center
+				justify-center
+				bg-bg-dark
+				text-text-dark
+				px-6
+				overflow-hidden
+			"
 		>
-			{/* Diagonal Background Pattern */}
+			{/* Subtle Diagonal Background Pattern */}
 			<div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[linear-gradient(135deg,#ffffff_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-			<div className="relative w-full md:w-[60%] max-w-[1200px] mx-auto space-y-16">
+			{/* Content Container */}
+			<div className="relative w-full md:w-[60%] max-w-[1200px] space-y-16">
+				
 				{/* Section Title */}
-				<h1 className="text-4xl sm:text-5xl font-semibold tracking-wide">
+				<h1 className="text-4xl sm:text-5xl font-semibold tracking-wide text-center md:text-left">
 					Intelligence by <span className="text-accent">design</span>.
 				</h1>
 
 				{/* Grid Layout */}
 				<div className="grid md:grid-cols-2 gap-8">
-					{lab.map((lab, index) => (
+					{lab.map((item, index) => (
 						<motion.div
-							key={lab.title}
+							key={item.title}
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.4, delay: index * 0.08 }}
@@ -58,11 +70,11 @@ const AILab = () => {
 							"
 						>
 							<h3 className="text-lg font-medium mb-3 tracking-wide group-hover:text-accent transition-colors">
-								{lab.title}
+								{item.title}
 							</h3>
 
 							<p className="text-sm text-text-muted leading-relaxed">
-								{lab.desc}
+								{item.desc}
 							</p>
 						</motion.div>
 					))}

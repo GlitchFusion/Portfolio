@@ -12,10 +12,19 @@ const Languages = ({ dev }) => {
 	return (
 		<section
 			id="languages"
-			className="relative min-h-screen text-text-dark px-6 py-14"
+			className="
+				relative
+				min-h-screen
+				flex
+				items-center
+				justify-center
+				text-text-dark
+				px-6
+				overflow-hidden
+			"
 		>
-			{/* CONTAINER */}
-			<div className="w-full md:w-[60%] max-w-[1200px] mx-auto flex flex-col gap-10">
+			<div className="w-full md:w-[60%] max-w-[1200px] flex flex-col gap-10">
+
 				{/* Title */}
 				<DevWrapper name="Languages.Title" dev={dev}>
 					<h1 className="text-4xl sm:text-5xl font-semibold tracking-wide">
@@ -26,15 +35,7 @@ const Languages = ({ dev }) => {
 				{/* HEADER SELECTOR */}
 				<DevWrapper name="Languages.Selector" dev={dev}>
 					<div className="relative border border-border rounded-xl overflow-hidden bg-bg-surface/40 backdrop-blur-md">
-						{/* Grid Overlay */}
-						<div
-							className="absolute inset-0 opacity-20 pointer-events-none 
-								bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),
-								linear-gradient(to_bottom,#1f2937_1px,transparent_1px)]
-								bg-[size:50px_50px]"
-						/>
-
-						{/* Equal Sections */}
+						
 						<div className="relative grid grid-cols-1 md:grid-cols-2 divide-x divide-border">
 							{keys.map((key) => {
 								const item = lang[key];
@@ -46,7 +47,6 @@ const Languages = ({ dev }) => {
 										onClick={() => setActive(active === key ? null : key)}
 										className="cursor-pointer px-8 py-6 group transition-all duration-300"
 									>
-										{/* Top Row */}
 										<div className="flex justify-between items-center">
 											<span
 												className={`text-lg font-semibold transition-colors duration-300 ${
@@ -63,7 +63,6 @@ const Languages = ({ dev }) => {
 											</span>
 										</div>
 
-										{/* Coordinates */}
 										<div
 											className={`mt-2 text-xs tracking-widest transition-colors duration-300 ${
 												isActive
@@ -74,7 +73,6 @@ const Languages = ({ dev }) => {
 											{item.coords}
 										</div>
 
-										{/* Active underline */}
 										{isActive && (
 											<motion.div
 												layoutId="active-line"
@@ -93,36 +91,29 @@ const Languages = ({ dev }) => {
 					</div>
 				</DevWrapper>
 
-				{/* INTELLIGENCE PANEL */}
+				{/* PANEL */}
 				<DevWrapper name="Languages.Panel" dev={dev}>
 					<AnimatePresence mode="wait">
 						{data ? (
 							<motion.div
 								key={active}
+								layout
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, y: -10 }}
 								transition={{ duration: 0.3 }}
 								className="relative border border-border rounded-xl p-10 bg-bg-surface/30 backdrop-blur-md"
 							>
-								{/* Grid Overlay */}
-								<div
-									className="absolute inset-0 opacity-10 pointer-events-none 
-										bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),
-										linear-gradient(to_bottom,#1f2937_1px,transparent_1px)]
-										bg-[size:50px_50px]"
-								/>
-
 								<div className="relative space-y-10">
-									{/* Header */}
 									<div className="flex justify-between items-center">
-										<h2 className="text-2xl tracking-widest">{data.name}</h2>
+										<h2 className="text-2xl tracking-widest">
+											{data.name}
+										</h2>
 										<span className="text-sm text-text-muted">
 											{data.level}
 										</span>
 									</div>
 
-									{/* Info Grid */}
 									<div className="grid md:grid-cols-2 gap-12 text-sm leading-relaxed">
 										<InfoBlock title="PROFICIENCY" value={data.proficiency} />
 										<InfoBlock title="RESEARCH FOCUS" value={data.research} />
@@ -134,23 +125,15 @@ const Languages = ({ dev }) => {
 								</div>
 							</motion.div>
 						) : (
-							/* DEFAULT EMPTY STATE */
 							<motion.div
 								key="empty"
+								layout
 								initial={{ opacity: 0 }}
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
 								className="relative border border-border rounded-xl py-20 bg-bg-surface/20 backdrop-blur-md flex items-center justify-center"
 							>
-								{/* Grid Overlay */}
-								<div
-									className="absolute inset-0 opacity-10 pointer-events-none 
-										bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),
-										linear-gradient(to_bottom,#1f2937_1px,transparent_1px)]
-										bg-[size:50px_50px]"
-								/>
-
-								<p className="relative text-text-muted text-sm tracking-widest uppercase">
+								<p className="text-text-muted text-sm tracking-widest uppercase">
 									Select a coordinate to view intelligence
 								</p>
 							</motion.div>
