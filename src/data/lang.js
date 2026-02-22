@@ -18,7 +18,7 @@ export default [
 		city: "Berlin",
 		coords: "52.5200° N / 13.4050° E",
 		name: "GERMAN",
-		level: "B1 — Intermediate",
+		level: "A1 — Beginner",
 		proficiency: "Technical reading & documentation",
 		strategic:
 			"Read technical specifications and collaborate with engineering teams",
